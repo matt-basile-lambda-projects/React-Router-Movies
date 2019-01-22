@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
+import {Link} from 'react-router-dom';
 export default class Movie extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +38,9 @@ export default class Movie extends Component {
 
   saveMovie = () => {
     const addToSavedList = this.props.addToSavedList;
-    this.props.addToSavedList(this.state.movie)
+    const movieLink = <Link>{this.state.movie}</Link>
+    console.log(movieLink);
+   addToSavedList(this.state.movie)
   }
 
   render() {
